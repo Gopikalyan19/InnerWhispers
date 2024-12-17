@@ -1,12 +1,84 @@
 <!doctype html>
 <html class="h-100" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <title> InnerWhispers</title>
+    <link rel="stylesheet" href="css/theme.min.css">
 
-  <head>
-      <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-  <title> InnerWhispers</title>
-  <link rel="stylesheet" href="css/theme.min.css">
 
+    <style>
+      .blog-resources {
+        padding: 4rem 0;
+       
+      }
+      
+      .section-header {
+        margin-bottom: 2.5rem;
+      }
+      
+      .section-title {
+        color: #1d1d1e;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      
+      .section-subtitle {
+        color: #7e8ba3;
+        font-size: 1.1rem;
+      }
+      
+      .blog-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+      }
+      
+      .blog-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      }
+      
+      .blog-card img {
+        height: 220px;
+        object-fit: cover;
+      }
+      
+      .blog-card .card-title {
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 0.75rem;
+      }
+      
+      .blog-card .card-text {
+        color: #6c757d;
+        margin-bottom: 1.25rem;
+      }
+      
+      .btn-primary {
+       
+        border: none;
+        transition: background-color 0.3s ease;
+      }
+      
+      .btn-primary:hover {
+        background-color: #4e4e4e;
+      }
+      
+      .btn-explore {
+        background: linear-gradient(to right, #1d1d23, #5d5d5e);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 30px;
+        transition: transform 0.3s ease;
+      }
+      
+      .btn-explore:hover {
+        transform: scale(1.05);
+        color: white;
+      }
+      </style>
    <style>
 
 /* inter-300 - latin */
@@ -19,7 +91,6 @@
        url('./fonts/inter-v12-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
        url('./fonts/inter-v12-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -40,6 +111,143 @@
 }
 
 </style>
+<style>
+  .social-connect {
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .social-connect h5 {
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .social-icons a {
+    color: #555;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #000000;
+  }
+  
+  .social-icons svg {
+    width: 24px;
+    height: 24px;
+  }
+  </style>
+
+
+<style>
+  .faq-section {
+   background-color: #fcf0f1;
+    padding: 4rem 0;
+  }
+  
+  .faq-content {
+    display: flex;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+  
+  .faq-text {
+    flex: 1;
+    padding-right: 2rem;
+  }
+  
+  .faq-text h2 {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .faq-text p {
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  .faq-questions {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .faq-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: #ffffff;
+    cursor: pointer;
+  }
+  
+  .faq-question span {
+    font-weight: 500;
+    color: #333;
+    font-size: 1rem;
+  }
+  
+  .faq-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #101010;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .faq-answer {
+    display: none;
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .faq-answer p {
+    color: #666;
+    line-height: 1.6;
+    margin: 1rem 0;
+  }
+  
+  .faq-item.active .faq-answer {
+    display: block;
+    max-height: 200px;
+  }
+  
+  .faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+  }
+  
+  @media (max-width: 768px) {
+    .faq-content {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  
+    .faq-text {
+      padding-right: 0;
+      text-align: center;
+    }
+  }
+  </style>
 
   </head>
 
@@ -47,7 +255,7 @@
 
     <nav id="navScroll" class="navbar navbar-expand-lg navbar-light fixed-top" tabindex="0">
   <div class="container">
-    <a class="navbar-brand pe-4 fs-4" href="/">
+    <a class="navbar-brand pe-4 fs-4" href="index.html">
   <span class="ms-1 fw-bolder"> InnerWhispers</span>
 </a>
 
@@ -57,8 +265,8 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <li class="nav-item">
-    <a class="nav-link" href="#top" aria-label="Brings you to the frontpage">
-      About
+    <a class="nav-link" href="./aboutus.html">
+      About us
     </a>
   </li>
   <li class="nav-item">
@@ -68,12 +276,7 @@
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#therapy">
-      Therapy
-    </a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#doctor">
-      Meet Our Doctor
+      Conditions that we treat
     </a>
   </li>
   <li class="nav-item">
@@ -81,11 +284,10 @@
       Testimonials
     </a>
   </li>
-
     </ul>
 
-    <a href="register.html" class="link-dark pb-1 link-fancy me-2">
-      Sign Up 
+    <a href="" class="link-dark pb-1 link-fancy me-2">
+      Contact Us
     </a>
 
     </div>
@@ -102,9 +304,12 @@
     <div class="row">
 
 <div class="col-lg-7 py-vh-6 position-relative" data-aos="fade-right">
-  <h1 class="display-1 fw-bold mt-5">Hola! We are InnerWhispers</h1>
-  <p class="lead">We believe in the power of mental wellness to transform lives. We understand that seeking support for your mental health is a courageous step, and we're here to guide you on your journey towards healing and growth.</p>
-  <a href="aboutus.html" class="btn btn-dark btn-xl shadow me-3 rounded-0 my-5">About us</a>
+  <h1 class="display-1 fw-bold mt-5">InnerWhispers</h1>
+  <h4 class="display-6 "><span class="fw-light">Breaking Stigma, Building Wellness</span></h4>
+
+  <p>We believe in the power of mental wellness to transform lives. We understand that seeking support for your mental health is a courageous step, and we're here to guide you on your journey towards healing and growth.</p> 
+  <a href="aboutus.html" class="btn btn-primary btn-xl  me-3 rounded-pill">About Us</a>
+
 </div>
 
 
@@ -124,18 +329,27 @@
   <span class="h5 fw-lighter">01.</span>
   <h3 class="py-5 border-top border-dark">Therapy.</h3>
   <p>We offer a range of therapy services to support individuals in their journey towards mental health and well-being. Our experienced therapists provide compassionate and evidence-based care tailored to your specific needs and goals.</p>
+  <a href="thearpy.html" class="link-dark pb-1 link-fancy me-2">
+    Know more
+   </a>
 </div>
 
 <div class="col-md-6 col-lg-4 py-vh-4 pb-0" data-aos="fade-up" data-aos-delay="400">
   <span class="h5 fw-lighter">02.</span>
   <h3 class="py-5 border-top border-dark">Counselings.</h3>
   <p>Our counseling services are designed to provide support, guidance, and healing for individuals facing a wide range of challenges. Our compassionate counselors offer evidence-based interventions tailored to your unique needs and goals.</p>
+  <a href="counseling.html" class="link-dark pb-1 link-fancy me-2">
+    Know more
+   </a>
 </div>
 
 <div class="col-md-6 col-lg-4 py-vh-6 pb-0" data-aos="fade-up" data-aos-delay="600">
   <span class="h5 fw-lighter">03.</span>
   <h3 class="py-5 border-top border-dark">Self Care.</h3>
   <p>We believe that self-care is an essential component of maintaining mental health and overall well-being. Incorporating self-care practices into your daily routine can help you manage stress, reduce symptoms of anxiety and depression, and foster a greater sense of balance and resilience.</p>
+  <a href="selfcare.html" class="link-dark pb-1 link-fancy me-2">
+    Know more
+   </a>
 </div>
 </div>
 
@@ -150,20 +364,20 @@
   <div class="col-lg-6">
   <div class="row gx-5 d-flex">
     <div class="col-md-5 offset-md-1">
-      <div class="shadow ratio ratio-1x1 rounded bg-cover mt-5 bp-center float-end" data-aos="fade-up" style="background-image: url(pics/208452805-overcome-psychotherapy-scene-between-girl-and-psychiatrist-flat-vector-illustration.jpg);">
+      <div class="ratio ratio-1x1 rounded bg-cover mt-5 bp-center float-end" data-aos="fade-up" style="background-image: url(img/77442498-4462-4f26-8d41-59a6419edf7d-removebg-preview.png);">
       </div>
     </div>
     <div class="col-md-6">
-      <div class="col-12 shadow ratio rounded bg-cover mt-5 bp-center" data-aos="fade-left" style="background-image: url(pics/1.png);--bs-aspect-ratio: 150%;">
+      <div class="col-12  ratio rounded bg-cover mt-5 bp-center" data-aos="fade-left" style="background-image: url(img/Hand_drawn_illustration_of_a_girl_with_depressed_expression-removebg-preview.png);--bs-aspect-ratio: 150%;">
       </div>
     </div>
   </div>
 </div>
 <div class="col-lg-4">
-  <h3 class="py-5 border-top border-dark" data-aos="fade-left">Mission & Vision</h3>
-  <p data-aos="fade-left" data-aos-delay="200">Our mission is to empower individuals to achieve mental wellness and live fulfilling lives. We are committed to providing compassionate, evidence-based care that addresses the unique needs and goals of each client. We strive to reduce stigma surrounding mental health and promote access to quality care for all.</p>
+  <h3 class="py-5  border-dark" data-aos="fade-left">Mission & Vision</h3>
+  <p data-aos="fade-left" data-aos-delay="200">Our mission is to empower individuals to achieve mental wellness and live fulfilling lives. We strive to reduce stigma surrounding mental health and promote access to quality care for all.</p>
   <p data-aos="fade-left" data-aos-delay="400">
-    Our vision is to create a world where mental health is prioritized, stigma is eliminated, and all individuals have access to high-quality, compassionate care. We envision a society where everyone feels empowered to seek help for their mental health concerns and where mental wellness is recognized as essential to overall well-being.
+    Our vision is to envision a society where everyone feels empowered to seek help for their mental health concerns and where mental wellness is recognized as essential to overall well-being.
     </a>
   </p>
 </div>
@@ -171,84 +385,239 @@
 
   </div>
 </div><!-------------------section ends---------------->
-
 
 
 <div class="py-vh-5 w-100 overflow-hidden" id="therapy">
   <div class="container">
-      <div class="row d-flex justify-content-end">
-<div class="col-lg-8" data-aos="fade-down"><h2 class="display-6">Therapy's that we provide.</h2></div>
-</div>
+    <div class="row d-flex justify-content-end">
+      <h3 class="fs-2">Conditions that we treat....</h3>
+      <p class="lead">Here are some mental health conditions that we treat for your mental wellness.</p>
+      </div>
+<br> <br>
 <div class="row d-flex align-items-center">
-<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+  <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
   <h4>
-    <small>01.</small>
-    <br>Cognitive Behavioral Therapy</h4>
-  <p> It aims to help individuals develop more adaptive coping skills and change unhelpful behaviors.</p>
-  <p>
-    <a href="register.html" class="text-decoration-none">Learn more
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewbox="0 0 16 16">
-        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-      </svg>
+    Depression</h4>
+  <p>Persistent feelings of sadness, hopelessness, and loss of interest or pleasure in activities.
+    Changes in appetite, sleep disturbances, fatigue, and difficulty concentrating.
+    <br> <br>
+    <a href="depression.html" class="link-dark pb-1 link-fancy me-2">
+     Know more
     </a>
+
   </p>
+    
 </div>
 
+<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+  <h4>
+    Trauma</h4>
+  <p>Trauma resulting from experiences such as accidents, abuse, or violence.
+    Symptoms may include flashbacks, nightmares, hypervigilance, and avoidance of trauma-related triggers.
+    <br> <br>
+    <a href="trauma.html" class="link-dark pb-1 link-fancy me-2">
+     Know more
+    </a></p>
+</div>
 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
-  
-  <h4 class="pt-5">
-    <small>02.</small>
-    <br>Mindfulness-Based Therapy</h4>
-  <p> It incorporate mindfulness practices to help individuals cultivate present-moment awareness and develop coping strategies for managing distress.
-  </p>
+  <h4>
+    Sexuality</h4>
   <p>
-    <a href="register.html" class="text-decoration-none">Learn more
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewbox="0 0 16 16">
-        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-      </svg>
-    </a>
-  </p>
+    Understanding, affirmation, and support for diverse sexual orientations, gender identities, and relationships. Fostering a safe space for exploration and acceptance.
+    <br> <br>
+    <a href="sexuality.html" class="link-dark pb-1 link-fancy me-2">
+     Know more
+    </a></p>
 </div>
-
+<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+  <h4>
+    Stress</h4>
+  <p>Adjustment Disorders, involving emotional or behavioral symptoms in response to stressful life events.
+    Acute Stress Disorder, marked by severe anxiety and dissociative symptoms following a traumatic event.
+    
+    <br> <br>
+    <a href="stress.html" class="link-dark pb-1 link-fancy me-2">
+     Know more
+    </a></p>
+</div>
 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
   <h4>
-    <small>03.</small>
-    <br>Psychodynamic Therapy</h4>
-  <p>Psychodynamic therapy often involves exploring early childhood experiences and how they impact present-day functioning.</p>
-  <p>
-    <a href="register.html" class="text-decoration-none">Learn more
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewbox="0 0 16 16">
-        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-      </svg>
-    </a>
-  </p>
+    OCD</h4>
+  <p>Intrusive thoughts (obsessions) and repetitive behaviors (compulsions) to alleviate anxiety.
+    Compulsions may include excessive cleaning, checking, or counting rituals.
+    <br> <br>
+    <a href="ocd.html" class="link-dark pb-1 link-fancy me-2">
+     Know more
+    </a></p>
 </div>
+<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="700">
+  <h4>
+    Bi-polar Disorder</h4>
+  <p>Episodes of mood swings ranging from depressive lows to manic highs.
+    Fluctuations in energy levels, activity levels, sleep patterns, and judgment.
+    <br> <br>
+    <a href="bi-polar.html" class="link-dark pb-1 link-fancy me-2">
+     Know more
+    </a></p>
+</div>
+<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="800">
+  <h4>
+    PTSD</h4>
+  <p>Intrusive Thoughts like Flashbacks, nightmares, or distressing memories of the traumatic event. Avoidance of people, places, or activities that remind the individual of the trauma.
+   Negative thoughts about oneself or the world, feelings of detachment, and difficulty experiencing positive emotion.
+   <br> <br>
+   <a href="ptsd.html" class="link-dark pb-1 link-fancy me-2">
+    Know more
+   </a></p>
+</div>
+<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="900">
+  <h4>
+    Anxiety</h4>
+  <p>Generalized Anxiety Disorder (GAD), characterized by excessive worry and fear about everyday situations.
+    Panic Disorder, marked by sudden and repeated episodes of intense fear or terror.
+    Social Anxiety Disorder, involving overwhelming anxiety and self-consciousness in social situations.
+    <br> <br>
+    <a href="anxiety.html" class="link-dark pb-1 link-fancy me-2">
+     Know more
+    </a></p>
+</div>
+<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="1000">
+  <h4>
+    ADHD</h4>
+  <p>Persistent patterns of inattention, hyperactivity, and impulsivity that interfere with daily functioning.
+    Symptoms may present in childhood and continue into adulthood.
+    <br> <br>
+    <a href="adhd.html" class="link-dark pb-1 link-fancy me-2">
+     Know more
+    </a></p>
+</div>
+<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="1100">
+  <h4>
+    Addiction</h4>
+  <p>Addiction is a complex condition where an individual becomes dependent on a substance or behavior, often leading to negative consequences in their life. 
+    It affects both the brain and behavior, making it difficult to stop engaging in the addictive behavior despite wanting to.
+    <br> <br>
+    <a href="addiction.html" class="link-dark pb-1 link-fancy me-2">
+     Know more
+    </a></p>
+</div>
+<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="1200">
+  <h4>
+    Schizophrenia</h4>
+  <p>Schizophrenia can cause symptoms like hallucinations, delusions, and disorganized thinking,
+     which can make it difficult for someone to distinguish between what is real and what isn't.
+    <br> <br>
+    <a href="schizo.html" class="link-dark pb-1 link-fancy me-2">
+     Know more
+    </a></p>
+</div>
+<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="1300">
+  <h4>
+    Insomnia</h4>
+  <p>Insomnia is characterized by difficulty falling asleep, staying asleep, or waking up too early and not being able to fall back asleep.
+     This can lead to tiredness during the day and can impact overall health and quality of life.
+    <br> <br>
+    <a href="inso.html" class="link-dark pb-1 link-fancy me-2">
+     Know more
+    </a></p>
 </div>
 
+
+</div>
   </div>
 </div><!---------------section ends-------------->
+<section class="faq-section bg-gray-10">
+  <div class="container">
+    <div class="faq-content">
+      <div class="faq-text">
+        <h2>Find Answers</h2>
+        <p>We're here to help you navigate your mental health journey with clear, compassionate support.</p>
+      </div>
+      <div class="faq-questions">
+        <div class="faq-item active">
+          <div class="faq-question">
+            <span>How do I book a therapy session?</span>
+            <button class="faq-toggle">+</button>
+          </div>
+          <div class="faq-answer">
+            <p>Booking is easy. Visit the Therapy section or click on the “Book a Session” button.</p>
+          </div>
+        </div>
 
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Are your self-care tools free?</span>
+            <button class="faq-toggle">+</button>
+          </div>
+          <div class="faq-answer">
+            <p>We offer both free and premium resources. Basic mindfulness guides and stress management tips are completely free.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Can I get therapy from anywhere?</span>
+            <button class="faq-toggle">+</button>
+          </div>
+          <div class="faq-answer">
+            <p>Yes! We provide online therapy sessions accessible from anywhere with an internet connection via video, phone, or chat.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-------------------------------------------------->
-<div class="container py-vh-4 w-100 overflow-hidden" id="doctor">
-  <div class="row d-flex justify-content-center align-items-center">
-    <div class="col-lg-5">
-  <h3 class="py-5 border-top border-dark" data-aos="fade-right">Meet Our Doctor.</h3>
-</div>
-<div class="col-md-7" data-aos="fade-left">
-  <blockquote>
-    <div class="fs-4 my-3 fw-light pt-4 border-bottom pb-3">Navya Mounika is a board-certified psychiatrist with Years of experience in the field of mental health. With a compassionate and empathetic approach, I'am dedicated to providing high-quality care to individuals struggling with a variety of mental health challenges. She specializes in [list areas of specialization, if applicable], and her expertise and commitment to excellence are reflected in her work with clients.</div>
-    <img src="pics/65350872-3edc-4e8c-8080-af6ef3d8d34e.jpeg" width="64" height="64" class="img-fluid rounded-circle me-3" alt="" data-aos="fade">
-    <span><span class="fw-bold">Navya Mounika,</span>
-      Asst Proff.</span>
-  </blockquote>
-</div>
+<section class="blog-resources">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2 class="section-title">Explore Our Blog and Resources</h2>
+      <p class="section-subtitle">Discover insights, tips, and tools to support your mental health journey.</p>
+    </div>
 
+    <div class="row blog-cards">
+      <div class="col-md-4 mb-4">
+        <div class="card blog-card">
+          <img src="img/stress.gif" alt="Stress Management" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">5 Tips to Overcome Stress</h5>
+            <p class="card-text">Discover practical techniques to keep your stress in check and improve your daily routine.</p>
+            <a href="#" class="btn btn-primary">Read More</a>
+          </div>
+        </div>
+      </div>
 
+      <div class="col-md-4 mb-4">
+        <div class="card blog-card">
+          <img src="img/Deep Breathing Animation.gif" alt="Mindfulness" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Understanding Mindfulness in Everyday Life</h5>
+            <p class="card-text">Learn how mindfulness can transform your mental health journey and improve focus.</p>
+            <a href="#" class="btn btn-primary">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card blog-card">
+          <img src="img/Depression.gif" alt="Anxiety Podcast" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Podcast: Managing Anxiety with CBT</h5>
+            <p class="card-text">A quick listen to explore effective CBT techniques for reducing anxiety.</p>
+            <a href="#" class="btn btn-primary">Listen Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="#" class="btn btn-explore">Explore More Resources</a>
+    </div>
   </div>
-</div><!-------------------section ends---------------->
+</section>
 
-<div class="bg-light w-100 overflow-hidden" id="testimonials">
+<div class="bg-gray-100 w-100 overflow-hidden" id="testimonials">
   <div class="container py-vh-6">
     <div class="row d-flex justify-content-center">
       <div class="col-12 col-lg-10 col-xl-8 text-center">
@@ -375,35 +744,8 @@
 </div>
 </div><!-------------------section ends---------------->
 
-<div class="row py-vh-4">
-  <div class="col">
-<span class="fs-6">Connect with us:</span>
-</div>
-<div class="col opacity-50" data-aos="fade-up" data-aos-duration="250">
-  <a href="">
-  <img src="Svg/logo-facebook (1).svg" alt="" width="36" height="36" fill="currentColor" class="bi bi-bootstrap-fill" viewBox="0 0 16 16">
-</a>
-</div>
-
-<div class="col opacity-50" data-aos="fade-up" data-aos-duration="500">
-  <a href="https://www.instagram.com/inner__whispers_/">
-  <img src="Svg/logo-instagram.svg" alt="" width="36" height="36" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-</a>
-</div>
-
-
-
-<div class="col opacity-50" data-aos="fade-up" data-aos-duration="1000">
-  <a href="">
-  <img src="Svg/mail-outline.svg" alt="" width="36" height="36" fill="currentColor" class="bi bi-twitch" viewBox="0 0 16 16">
-</a>
-</div>
-
-<br>
-<br>
-<br>
-
-<div class="container py-vh-3 border-top" data-aos="fade" data-aos-delay="200">
+ 
+<div class=" container py-vh-3 " data-aos="fade" data-aos-delay="200">
 <div class="small py-vh-3 w-100 overflow-hidden">
   <div class="container">
     <div class="row">
@@ -451,90 +793,183 @@
   </div>
 </div>
 </div><!-------------------section ends---------------->
-
-
-<div class="container py-vh-3 border-top" data-aos="fade" data-aos-delay="200">
-  <div class="row d-flex justify-content-center">
-    <div class="col-12 col-lg-8 text-center">
-      <h3 class="fs-2 fw-light">Contact Us<span class="fw-bold">
-          </span>
-    </h3>
-    <p>If you're ready to take the first step towards a brighter tomorrow, we invite you to contact us today. Our caring and compassionate team is here to support you on your journey to mental wellness.</p>
-    <div class="col">
-      <form class="form-floating">
-        <input type="email" class="form-control p-3" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Email address</label>
-      </form>
-    </div>
-    <br>
-    <div class="col-auto">
-      <a href="#" class="btn btn-primary py-3 px-5">Subscribe</a>
-    </div>
+<div class="social-connect ">
+  <h5>Connect with us</h5>
+  <div class="social-icons">
+    <a href="https://www.facebook.com/your_page" aria-label="Facebook">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+      </svg>
+    </a>
+    <a href="https://www.instagram.com/inner__whispers_/" aria-label="Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+      </svg>
+    </a>
+    <a href="mailto:your-email@example.com" aria-label="Email">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+        <polyline points="22,6 12,13 2,6"></polyline>
+      </svg>
+    </a>
   </div>
-    
-    </div>
-  </div>
-</div><!-------------------section ends---------------->
+</div>
 
-    </main>
+
+</main>
 
     <footer>
   <div class="container small border-top">
     <div class="row py-5 d-flex justify-content-between">
 
-<div class="col-12 col-lg-6 col-xl-3 border-end p-5">
+<div class="col-12 col-lg-6 col-xl-3  p-5">
   
-  <address class="text-secondary mt-3">
-    <strong>InnerWhispers</strong><br>
-    Near samskar school Tenali<br>
+  <h4 class="fw-bold mt-3">
+    <strong>InnerWhispers</strong>
+  </h4> <p class="fw-bold"> 
+    Breaking Stigma, Building Wellness.
+  </p>
+  <p>  Near samskar school Tenali<br>
     Andhra Pradesh India<br>
     <abbr title="Phone">P:</abbr>
-    8500691183
-  </address>
+    8500691183</p>
 </div>
-<div class="col-12 col-lg-6 col-xl-3 border-end p-5">
-  <h3 class="h6 mb-3">Home</h3>
+<div class="col-12 col-lg-6 col-xl-3  p-5">
+  <h3 class="h6 mb-3">Quick Links</h3>
   <ul class="nav flex-column">
     <li class="nav-item">
-      <a class="nav-link link-secondary ps-0" aria-current="page" href="#">About Us</a>
+      <a class="nav-link link-secondary ps-0" aria-current="page" href="index.html">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link link-secondary ps-0" href="#">Our Services</a>
+      <a class="nav-link link-secondary ps-0" href="aboutus.html">About Us</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link link-secondary ps-0" href="#">Testinomials</a>
+      <a class="nav-link link-secondary ps-0" href="carrers.html">Carrers</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link link-secondary ps-0" href="#">Contact Us</a>
+      <a class="nav-link link-secondary ps-0" href="#">FAQ's</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-secondary ps-0" href="contact.html">Contact Us</a>
+    </li>
+    
+  </ul>
+</div>
+<div class="col-12 col-lg-6 col-xl-3  p-5">
+  <h3 class="h6 mb-3">Pages</h3>
+  <ul class="nav flex-column">
+    
+    <li class="nav-item">
+      <a class="nav-link link-secondary ps-0" href="thearpy.html">Therapy</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-secondary ps-0" href="counseling.html">counseling</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-secondary ps-0" href="selfcare.html">Self-care</a>
     </li>
   </ul>
 </div>
-<div class="col-12 col-lg-6 col-xl-3 border-end p-5">
-  <h3 class="h6 mb-3">Therapy</h3>
+<div class="col-12 col-lg-6 col-xl-3  p-5">
+  <h3 class="h6 mb-3">Our Team</h3>
   <ul class="nav flex-column">
     <li class="nav-item">
-      <a class="nav-link link-secondary ps-0" aria-current="page" href="#"></a>
+      <a class="nav-link link-secondary ps-0"  href="therapist.html">Therapists</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link link-secondary ps-0" href="#">Cognitive Behavioral Therapy</a>
+      <a class="nav-link link-secondary ps-0" href="counsellor.html">Counselors</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link link-secondary ps-0" href="#">Psychodynamic Therapy</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link link-secondary ps-0" href="#">Mindfulness-Based Therapy</a>
+      <a class="nav-link link-secondary ps-0" href="#">Guidance & Support Experts</a>
     </li>
   </ul>
 </div>
+<br>
+<div class="col-12 col-lg-6 col-xl-3 p-5">
+  <h3 class="h6 mb-3">Conditions that we treat</h3>
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link link-secondary ps-0" href="depression.html">Depression</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-secondary ps-0" href="anxiety.html">Anxiety</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-secondary ps-0" href="stress.html">Stress</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-secondary ps-0" href="ocd.html">OCD</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-secondary ps-0" href="sexuality.html">Sexuality</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-secondary ps-0" href="bi-polar.html">Bi-Polar Disorder</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-secondary ps-0" href="ptsd.html">PTSD</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-secondary ps-0" href="schizo.html">Schizophrenia</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-secondary ps-0" href="adhd.html">ADHD</a>
+    </li>
+  </ul>
+</div>
+<div class="col-12 col-lg-6 col-xl-3  p-5">
+  <h3 class="h6 mb-3">Additional Content</h3>
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link link-secondary ps-0" aria-current="page" href="#">Blog</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-secondary ps-0" href="event.html">Events</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link link-secondary ps-0" href="#">Assessments</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-secondary ps-0" href="student-willness.html">Student Wellness Program</a>
+    </li>
+  </ul>
+</div>
+
 <div class="col-12 col-lg-6 col-xl-3 p-5">
   <h3 class="h6 mb-3">Others</h3>
   <ul class="nav flex-column">
     <li class="nav-item">
       <a class="nav-link link-secondary ps-0" aria-current="page" href="register.html">Sign Up</a>
             <a class="nav-link link-secondary ps-0" aria-current="page" href="terms.html">Terms and conditions</a>
-            <a class="nav-link link-secondary ps-0" aria-current="page" href="404.html">Error</a>
+            <a class="nav-link link-secondary ps-0" aria-current="page" href="#">Privacy Policy</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-secondary ps-0" href="#">Help</a>
     </li>
   </ul>
+</div>
+
+<div class="col-12 col-lg-6 col-xl-3  p-5">
+  
+  <address class="text-secondary mt-3">
+
+    <img src="img/hipaa-compliant2648.jpg" width="70" height="70" class="rounded-circle" >
+    <img src="img/esanjeevani.jpg" width="48" height="48" class="rounded-circle" >     
+    <img src="img/what-is-iso-9001-compliance.webp" width="48" height="48" class="rounded-circle">
+     
+  </address>
+</div>
+
+
+<div class="container text-center py-3 small">At InnerWhispers, we are here to support your mental health, but we are not equipped to handle emergencies such as self-harm, suicidal thoughts, or severe mental health conditions like psychosis or schizophrenia. In these situations, immediate help from a professional is essential.
+  If you or someone you know is in crisis, please reach out to the nearest hospital or emergency service for assistance. You can also contact a trusted psychiatrist, counselor, or therapist for urgent support. Involving a family member or close friend can provide additional comfort and help during this time.
+  <br> <br>
+Remember, seeking professional help promptly can make a significant difference, and you are not alone in this journey. Your safety and well-being are always the priority. 
+<br> <br>
+you can contact the Suicide Prevention Helpline at <strong>022 2754 6669 </strong> or AASRA at <strong> 91-9820466726</strong> for confidential support.
 </div>
 </div>
 </div>
@@ -568,6 +1003,20 @@
     console.log(scrollpos)
   })
 </script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-question');
+    
+    faqItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const faqItem = item.closest('.faq-item');
+        faqItem.classList.toggle('active');
+      });
+    });
+  });
+  </script>
 <script src="https://embed.elephant.ai/static/js/chatbot.js" id="ac9309b9-4252-4f91-88ae-01e949943abd"></script>
 
   </body>
