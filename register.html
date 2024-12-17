@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   <title>Register a new account</title>
   <link rel="stylesheet" href="css/theme.min.css">
-
+  <script type="module" src="reg.js"></script>
    <style>
 
 /* inter-300 - latin */
@@ -52,7 +52,7 @@
           
             <header class="mb-auto py-vh-2 col-12">
               <a class="navbar-brand pe-4 fs-4" href="/">
-  <span class="ms-1 fw-bolder">Nav.Cure</span>
+  <span class="ms-1 fw-bolder">InnerWhispers</span>
 </a>
 
 </header>
@@ -64,25 +64,20 @@
 <h2 class="fw-bold display-5 mb-4">Register a new account</h2>
 <div class="col-12">
   <div class="form-floating mb-3" >
-    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+    <input type="email" class="form-control" id="email" placeholder="name@example.com">
     <label for="floatingInput" >Email address</label>
   </div>
   <div class="form-floating mb-3">
-    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+    <input type="password" class="form-control" id="password" placeholder="Password" required>
     <label for="floatingPassword">Password</label>
   </div>
   <div class="form-floating">
-    <input type="password" class="form-control" id="floatingPasswordretype" placeholder="Password Retype" required>
+    <input type="password" class="form-control" id="Passwordretype" placeholder="Password Retype" required>
     <label for="floatingPassword">Password Retype</label>
   </div>
-  <br>
-  <div class="form-floating mb-3">
-    <input type="number" class="form-control" id="floatingPassword" placeholder="Phno" required>
-    <label for="floatingPassword">Phno</label>
-  </div>
-  <div class="d-grid">
-    <a href="Doctor Interface/public/doctors_index.html" class="btn btn-dark btn-xl  rounded-0 my-5">Submit</a>
-  </div>
+  <br><div class="d-grid"><a href="login.html">
+  <button class="btn btn-dark btn-xl  rounded-0 my-5" id="submit">Submit</button></a></div>
+ 
 
   <div class="text-center pt-4 mt-4 border-top">
     <p>Already have an account?

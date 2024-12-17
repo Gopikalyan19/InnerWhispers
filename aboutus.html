@@ -1,0 +1,1121 @@
+<!doctype html>
+<html class="h-100" lang="en">
+
+  <head>
+      <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <title>InnerWhispers</title>
+  <link rel="stylesheet" href="css/theme.min.css">
+
+
+  <style>
+    .trust-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-top-width: 3px !important;
+    }
+    
+    .trust-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    </style>
+  <style>
+   
+    .about-section {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        padding: 4rem 0;
+    }
+
+    .about-container {
+        max-width: 1200px;
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .about-background {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background-size: contain;
+        background-position: center right;
+        background-repeat: no-repeat;
+        opacity: 0.1;
+        z-index: 1;
+    }
+
+    .about-content {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        border-radius: 16px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        overflow: hidden;
+        padding: 3rem;
+        position: relative;
+        z-index: 2;
+        width: 100%;
+    }
+
+    .about-text {
+        flex: 1;
+        padding-right: 2rem;
+    }
+
+    .about-title {
+        color: var(--secondary-color);
+        margin-bottom: 1.5rem;
+        font-size: 2.5rem;
+        font-weight: 800;
+        line-height: 1.2;
+    }
+
+    .about-description {
+        color: var(--light-text);
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+
+    .highlight {
+        color: var(--primary-color);
+        font-weight: 700;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .about-section {
+            min-height: auto;
+            padding: 2rem 0;
+        }
+
+        .about-container {
+            flex-direction: column;
+            width: 95%;
+        }
+
+        .about-background {
+            width: 100%;
+            opacity: 0.05;
+        }
+
+        .about-content {
+            flex-direction: column;
+            padding: 2rem;
+        }
+
+        .about-text {
+            padding-right: 0;
+            text-align: center;
+        }
+
+        .about-title {
+            font-size: 2rem;
+            text-align: center;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .about-content {
+            margin: 0 1rem;
+            padding: 1.5rem;
+        }
+
+        .about-description {
+            font-size: 1rem;
+        }
+
+        .about-title {
+            font-size: 1.8rem;
+        }
+    }
+
+    /* Decorative Elements */
+    .about-content::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle at center, rgba(52, 152, 219, 0.1) 0%, transparent 70%);
+        z-index: -1;
+        pointer-events: none;
+    }
+</style>
+
+  
+<style>
+  
+  .team-section {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .team-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: var(--secondary-color);
+        }
+
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .team-member {
+            flex: 0 1 calc(50% - 2rem);
+            max-width: 300px;
+            text-align: center;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .team-member img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 4px solid var(--primary-color);
+        }
+
+        .team-member-name {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member-role {
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7);
+            padding: 1rem;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 2rem;
+            color: var(--light-text);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: var(--secondary-color);
+        }
+
+        .modal-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 5px solid var(--primary-color);
+        }
+
+        .modal-name {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-role {
+            color: var(--light-text);
+            margin-bottom: 1rem;
+        }
+
+        .modal-bio {
+            text-align: left;
+            line-height: 1.7;
+        }
+
+        /* Responsive Adjustments */
+        @media screen and (max-width: 768px) {
+            .team-member {
+                flex: 0 1 100%;
+                margin-bottom: 1rem;
+            }
+
+            .team-member img {
+                width: 180px;
+                height: 180px;
+            }
+
+            .modal-content {
+                margin: 10% auto;
+                width: 95%;
+                padding: 1rem;
+            }
+
+            .modal-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .modal-name {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .team-section {
+                padding: 1rem 0.5rem;
+            }
+
+            .team-member img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .modal-content {
+                margin: 15% auto;
+                padding: 1rem;
+            }
+
+            .modal-image {
+                width: 180px;
+                height: 180px;
+            }
+
+            .modal-name {
+                font-size: 1.3rem;
+            }
+        }
+</style>
+
+<style>
+  
+.form-control {
+    background-color: white;
+    border: 1px solid #dee2e6;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.1);
+}
+
+.btn-primary {
+    background-color: #000000;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #434343;
+    transform: translateY(-3px);
+}
+</style>
+
+  <style>
+    
+    .video-intro-section {
+            background-color: var(--secondary-color);
+            padding: 5rem 0;
+        }
+
+        .video-thumbnail {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .video-thumbnail:hover {
+            transform: scale(1.02);
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .play-button:hover {
+            background-color: white;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .play-button svg {
+            width: 40px;
+            height: 40px;
+            fill: var(--primary-color);
+        }
+
+        .video-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .video-headline {
+            color: var(--text-color);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .video-subtext {
+            color: #6c757d;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #5a6ae0;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(106, 122, 239, 0.4);
+        }
+
+        /* Video Modal */
+        .video-modal {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .video-modal-dialog {
+            max-width: 900px;
+            margin: 1.75rem auto;
+        }
+
+        @media (max-width: 768px) {
+            .video-thumbnail img {
+                height: 250px;
+            }
+
+            .play-button {
+                width: 60px;
+                height: 60px;
+            }
+
+            .play-button svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    
+  </style>
+
+   <style>
+
+/* inter-300 - latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local(''),
+       url('./fonts/inter-v12-latin-300.woff2') format('woff2'), 
+       url('./fonts/inter-v12-latin-300.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local(''),
+       url('./fonts/inter-v12-latin-500.woff2') format('woff2'), 
+       url('./fonts/inter-v12-latin-500.woff') format('woff'); 
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local(''),
+       url('./fonts/inter-v12-latin-700.woff2') format('woff2'), 
+       url('./fonts/inter-v12-latin-700.woff') format('woff'); 
+}
+
+</style>
+
+  </head>
+
+  <body data-bs-spy="scroll" data-bs-target="#navScroll">
+
+    <nav id="navScroll" class="navbar navbar-expand-lg navbar-light fixed-top" tabindex="0">
+  <div class="container">
+    <a class="navbar-brand pe-4 fs-4" href="index.html">
+  <span class="ms-1 fw-bolder"> InnerWhispers</span>
+</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+    <a class="nav-link" href="#top" aria-label="Brings you to the frontpage">
+      About
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#counsilings">
+      Counseling
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#team">
+      Our Team
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#conditions">
+      Conditions that we treat
+    </a>
+  </li>
+  
+  
+
+    </ul>
+
+    <a href="register.html" class="link-dark pb-1 link-fancy me-2">
+      Sign Up 
+    </a>
+
+    </div>
+</div>
+</nav>
+
+    <main>
+      <div class="w-100 overflow-hidden bg-gray-100" id="top">
+  
+  <div class="container position-relative">
+  
+  <br>
+  <br>
+ <div class="wrapper bg-gray-100 py-vh-5">
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+          <div class="col-12 col-xl-8 text-center">
+      <h1 class="fw-bold display-1"></h1>
+      <p class="fw-bold mb-3">"Healing begins when you listen to the whispers within and embrace the strength to grow."</p>
+      
+      </div>
+    
+      </div>
+    </div>
+    </div>
+  </div>
+
+  </div><!------------------section ends---------------->
+
+  <div class="container">
+    <div class="row py-vh-4">
+      
+<div class="row d-flex align-items-start mt-5 border-bottom pt-5" data-aos="fade" id="counsilings">
+  <div class="col-12 col-lg-8">
+    <span class="text-secondary"></span>
+        <h2>Our Motto</h2>
+        <p class="lead">We strive to end the suffering caused by mental illness,
+          offerings compassionate case to empower lasting mental willness.</p>
+          </div><!----------
+  <div class="col-12 col-lg-3 offset-lg-1 bg-light p-5 mt-5">
+    <h3 class="h6">Types of counselings</h3>
+    <p class="text-secondary">
+      <ul>
+        <li>Individual</li>
+        <li>Couple</li>
+        <li>Teen</li>
+        <li>Kid</li>
+        <li>Elder</li>
+      </ul>
+    </p>
+  </div>-------->
+</div>
+
+
+<section class="about-section">
+  <div class="about-background" style="background-image: url(img/transperent-logo.png);"></div>
+  <div class="about-container">
+      <div class="about-content">
+          <div class="about-text">
+              <h1 class="about-title">About InnerWhispers</h1>
+              <p class="about-description">
+                  Welcome to InnerWhispers, where your mental health and well-being are our top priorities.
+                  
+                  <br><br>
+                  
+                  <span class="highlight">Founded in 2024</span>, we recognized the growing need for a platform that not only connects individuals to professional therapy but also empowers them with tools for self-care, self-discovery, and emotional resilience. 
+                  
+                  <br><br>
+                  
+                  Fueled by passion and guided by a team of mental health professionals, technologists, and advocates, we set out to bridge the gap between mental health awareness and actionable solutions.
+              </p>
+          </div>
+      </div>
+  </div>
+</section>
+<div class="container">
+  <div class="row g-4 align-items-start mt-5 border-top pt-5" data-aos="fade">
+      <div class="col-12 col-lg-8 order-2 order-lg-1">
+          <h2 class="mb-4">Our Concept!</h2>
+          <p class="lead mb-4">A Compassionate Approach to Mental Health Support</p>
+          <p class="text-muted">
+              Our website serves as a welcoming and informative platform where individuals seeking mental health support can find valuable resources and connect with our dedicated team of professionals. With a user-friendly design and intuitive navigation, we aim to make accessing mental health services convenient and accessible for all.
+          </p>
+          <p class="text-muted">
+              From detailed information about our counseling services and therapy modalities to helpful articles, testimonials, and online appointment scheduling, our website is a comprehensive hub for individuals seeking support and guidance on their journey to mental wellness.
+          </p>
+          <p class="text-muted">
+              We prioritize inclusivity, privacy, and trust, ensuring that visitors feel empowered to take the first step towards improved mental health and well-being.
+          </p>
+      </div>
+      <div class="col-12 col-lg-4 order-1 order-lg-2 mb-4 mb-lg-0">
+          <div class="bg-light p-4 rounded ">
+              <h3 class="h6 mb-3">Our Core Values</h3>
+              <div class="list-group">
+                  <div class="list-group-item list-group-item-action">Compassion</div>
+                  <div class="list-group-item list-group-item-action">Empowerment</div>
+                  <div class="list-group-item list-group-item-action">Integrity</div>
+                  <div class="list-group-item list-group-item-action">Respect</div>
+                  <div class="list-group-item list-group-item-action">Collaboration</div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+  
+  
+    </div>
+
+    <div class="bg-gray-100 w-100 overflow-hidden" >
+      <div class="row py-vh-4 d-flex justify-content-center">
+        <div class="col-lg-10 col-xl-8">
+      <blockquote class="text-center"><div class="col-lg-12 mb-2">
+       
+        <p class="pt-2 w-light fs-3">"Mental health is not a destination, but a process. It's about how you drive, not where you're going."
+        </p>
+      </div>
+      </blockquote>
+      </div>
+      
+      </div></div>
+      <div class="container py-5">
+        <div class="row">
+            <div class="col-12 mb-4 text-center text-md-start">
+                <span class="text-primary fw-bold">We care about you</span>
+                <p class="pt-2 w-100 w-md-75 fs-4 text-muted">
+                    At InnerWhispers, we are driven by a mission to provide compassionate, accessible, and high-quality mental health care.
+                </p>
+            </div>
+        </div>
+        
+        <div class="row g-4 text-center">
+            <div class="col-12 col-md-4">
+                <div class="bg-light p-4 rounded">
+                    <span class="d-block display-5 text-primary fw-bold mb-2">+3.2%</span>
+                    <span class="text-muted">Users Empowered</span>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="bg-light p-4 rounded ">
+                    <span class="d-block display-5 text-primary fw-bold mb-2">10+</span>
+                    <span class="text-muted">Sessions Delivered</span>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="bg-light p-4 rounded ">
+                    <span class="d-block display-5 text-primary fw-bold mb-2">+100</span>
+                    <span class="text-muted">Community Members</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="team-section border-top border-bottom">
+  <h2 class="team-title">The Minds Behind InnerWhispers</h2>
+  <div class="team-members">
+      <div class="team-member" onclick="openModal('gopi')">
+          <img src="img/download (1).jpeg" alt="Gopi Kalyan">
+          <div class="team-member-name">Gopi Kalyan</div>
+          <div class="team-member-role">Founder & CEO</div>
+      </div>
+      <div class="team-member" onclick="openModal('navya')">
+          <img src="img/65350872-3edc-4e8c-8080-af6ef3d8d34e.jpeg" alt="Navya Mounika">
+          <div class="team-member-name">Navya Mounika</div>
+          <div class="team-member-role">Doctor</div>
+      </div>
+      <div class="team-member" onclick="openModal('hehe')">
+        <img src="img/『 𝚂𝚊𝚟𝚎 - 𝙵𝚘𝚕𝚕𝚘𝚠 𝚖𝚎 』🌸.jpeg" alt="Navya Mounika">
+        <div class="team-member-name">Navya Mounika</div>
+        <div class="team-member-role">Doctor</div>
+    </div>
+  </div>
+</div>
+
+<!-- Modals -->
+<div id="gopiModal" class="modal">
+  <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('gopi')">&times;</span>
+      <img src="img/download (1).jpeg" alt="Gopi Kalyan" class="modal-image">
+      <h2 class="modal-name">Gopi Kalyan</h2>
+      <div class="modal-role">Founder & CEO</div>
+      <div class="modal-bio">
+          <p>A visionary leader dedicated to bridging the gap between technology and mental wellness. With a passion for innovative solutions, Gopi has been at the forefront of transforming mental health support through cutting-edge technological approaches.</p>
+          <p>His mission is to make mental health resources more accessible, personalized, and effective for individuals from all walks of life.</p>
+      </div>
+  </div>
+</div>
+
+<div id="navyaModal" class="modal">
+  <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('navya')">&times;</span>
+      <img src="img/65350872-3edc-4e8c-8080-af6ef3d8d34e.jpeg" alt="Navya Mounika" class="modal-image">
+      <h2 class="modal-name">Navya Mounika</h2>
+      <div class="modal-role">Doctor</div>
+      <div class="modal-bio">
+          <p>A licensed therapist with extensive experience in counseling and mental health advocacy. Navya brings a wealth of clinical expertise and compassionate care to our team.</p>
+          <p>Her approach combines evidence-based therapeutic techniques with a deep understanding of individual mental health needs, ensuring comprehensive and personalized support for our clients.</p>
+      </div>
+  </div>
+</div>
+
+<div id="heheModal" class="modal">
+  <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('hehe')">&times;</span>
+      <img src="img/『 𝚂𝚊𝚟𝚎 - 𝙵𝚘𝚕𝚕𝚘𝚠 𝚖𝚎 』🌸.jpeg" alt="Navya Mounika" class="modal-image">
+      <h2 class="modal-name">Navya Mounika</h2>
+      <div class="modal-role">Doctor</div>
+      <div class="modal-bio">
+          <p>A licensed therapist with extensive experience in counseling and mental health advocacy. Navya brings a wealth of clinical expertise and compassionate care to our team.</p>
+          <p>Her approach combines evidence-based therapeutic techniques with a deep understanding of individual mental health needs, ensuring comprehensive and personalized support for our clients.</p>
+      </div>
+  </div>
+</div>
+
+
+<div class="container py-5">
+  <div class="row">
+      <div class="col-12 text-center mb-5">
+          <h2 class="display-6" data-aos="fade-down">Why you need to trust us...?</h2>
+      </div>
+  </div>
+  
+  <div class="row g-4">
+      <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="trust-card h-100 p-4 border-top border-primary">
+              <div class="trust-number mb-3">
+                  <span class="h5 text-primary fw-bold">01.</span>
+              </div>
+              <h3 class="h4 mb-4">Expertise and Experience</h3>
+              <p class="text-muted">
+                  Led by Dr. Mounika, a board-certified psychiatrist with 4 years of experience, our practice brings a wealth of knowledge and expertise to every client we serve. Dr. Mounika is recognized for her compassionate approach and dedication to providing the highest quality care.
+              </p>
+          </div>
+      </div>
+      
+      <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="trust-card h-100 p-4 border-top border-primary">
+              <div class="trust-number mb-3">
+                  <span class="h5 text-primary fw-bold">02.</span>
+              </div>
+              <h3 class="h4 mb-4">Evidence-Based Care</h3>
+              <p class="text-muted">
+                  We are committed to providing evidence-based care that is grounded in the latest research and best practices in the field of mental health. Our treatments are backed by science and proven to be effective in helping individuals overcome mental health challenges and improve their quality of life.
+              </p>
+          </div>
+      </div>
+      
+      <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="600">
+          <div class="trust-card h-100 p-4 border-top border-primary">
+              <div class="trust-number mb-3">
+                  <span class="h5 text-primary fw-bold">03.</span>
+              </div>
+              <h3 class="h4 mb-4">Compassionate Support</h3>
+              <p class="text-muted">
+                  We understand that navigating mental health issues can be challenging, and we're here to support you every step of the way. Our team is known for their compassion, empathy, and dedication to providing a safe and supportive environment where you can feel heard, understood, and valued.
+              </p>
+          </div>
+      </div>
+  </div>
+</div>
+
+<section class="video-intro-section">
+  <div class="container">
+      <div class="row align-items-center">
+          <div class="col-lg-7 mb-4 mb-lg-0">
+              <div class="video-thumbnail" data-bs-toggle="modal" data-bs-target="#videoModal">
+                  <img src="img/brain.png" alt="InnerWhispers Introduction" class="img-fluid">
+                  <div class="play-button">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z"/>
+                      </svg>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-5">
+              <div class="video-content ps-lg-4">
+                  <h2 class="video-headline">Discover InnerWhispers</h2>
+                  <p class="video-subtext">Learn how we're making mental wellness accessible, personalized, and stigma-free. Our mission is to provide compassionate, professional support tailored to your unique journey.</p>
+                  <a href="#" class="btn btn-primary btn-lg w-100">Start Your Journey</a>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Video Modal -->
+  <div class="modal fade video-modal" id="videoModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered video-modal-dialog">
+          <div class="modal-content">
+              <div class="modal-body p-0">
+                  <div class="ratio ratio-16x9">
+                      <iframe 
+                          src="img/02418b400d15bb352e7e8790fcaf74ad.mp4" 
+                          title="InnerWhispers Introduction" 
+                          allowfullscreen>
+                      </iframe>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+  
+<div class="container py-5 border-top">
+  <div class="row justify-content-center">
+      <div class="col-12 col-md-8 text-center">
+          <h2 class="mb-4">Get In Touch</h2>
+          <p class="text-muted mb-5">
+              Ready to start your journey? Drop us a message and we'll get back to you soon.
+          </p>
+          
+          <form>
+              <div class="mb-3">
+                  <input type="text" class="form-control form-control-lg" placeholder="Your Name" required>
+              </div>
+              
+              <div class="mb-3">
+                  <input type="email" class="form-control form-control-lg" placeholder="Email Address" required>
+              </div>
+              
+              <div class="mb-4">
+                  <textarea class="form-control form-control-lg" rows="4" placeholder="Your Message" required></textarea>
+              </div>
+              
+              <button type="submit" class="btn btn-primary btn-lg w-100">
+                  Send Message
+              </button>
+          </form>
+      </div>
+  </div>
+</div>
+
+
+
+  
+    </main>
+
+    <footer>
+      <div class="container small border-top">
+        <div class="row py-5 d-flex justify-content-between">
+    
+    <div class="col-12 col-lg-6 col-xl-3  p-5">
+      
+      <h4 class="fw-bold mt-3">
+        <strong>InnerWhispers</strong>
+      </h4> <p class="fw-bold"> 
+        Breaking Stigma, Building Wellness.
+      </p>
+      <p>  Near samskar school Tenali<br>
+        Andhra Pradesh India<br>
+        <abbr title="Phone">P:</abbr>
+        8500691183</p>
+    </div>
+    <div class="col-12 col-lg-6 col-xl-3  p-5">
+      <h3 class="h6 mb-3">Quick Links</h3>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" href="aboutus.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" href="#">Carrers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" href="#">FAQ's</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" href="#">Contact Us</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-lg-6 col-xl-3  p-5">
+      <h3 class="h6 mb-3">Therapy</h3>
+      <ul class="nav flex-column">
+        
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" href="#">Cognitive Behavioral Therapy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" href="#">Psychodynamic Therapy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" href="#">Mindfulness-Based Therapy</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-12 col-lg-6 col-xl-3  p-5">
+      <h3 class="h6 mb-3">Counselings</h3>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0"  href="#">Individual Counseling</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" href="#">Couples Counseling</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" href="#">Family Counseling</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" href="#">Career Counseling</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" href="#">Group Counseling</a>
+        </li>
+      </ul>
+    </div>
+    <br>
+    <div class="col-12 col-lg-6 col-xl-3 p-5">
+      <h3 class="h6 mb-3">Conditions that we treat</h3>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" href="depression.html">Depression</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" href="anxiety.html">Anxiety</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" href="stress.html">Stress</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" href="ocd.html">OCD</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" href="sexuality.html">Sexuality</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" href="bi-polar.html">Bi-Polar Disorder</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" href="ptsd.html">PTSD</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" href="schizo.html">Schizophrenia</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" href="adhd.html">ADHD</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-12 col-lg-6 col-xl-3  p-5">
+      <h3 class="h6 mb-3">Additional Content</h3>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" aria-current="page" href="#">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" href="#">Webinars</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" href="#">Social Media</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" href="#">Assessments</a>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="col-12 col-lg-6 col-xl-3 p-5">
+      <h3 class="h6 mb-3">Others</h3>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" aria-current="page" href="register.html">Sign Up</a>
+                <a class="nav-link link-secondary ps-0" aria-current="page" href="terms.html">Terms and conditions</a>
+                <a class="nav-link link-secondary ps-0" aria-current="page" href="404.html">Privacy Policy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-secondary ps-0" href="#">Help</a>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="col-12 col-lg-6 col-xl-3  p-5">
+      
+      <address class="text-secondary mt-3">
+    
+        <img src="img/hipaa-compliant2648.jpg" width="70" height="70" class="rounded-circle" >
+        <img src="img/esanjeevani.jpg" width="48" height="48" class="rounded-circle" >     
+        <img src="img/what-is-iso-9001-compliance.webp" width="48" height="48" class="rounded-circle" >
+         
+      </address>
+    </div>
+    
+    
+    <div class="container text-center py-3 small">At InnerWhispers, we are here to support your mental health, but we are not equipped to handle emergencies such as self-harm, suicidal thoughts, or severe mental health conditions like psychosis or schizophrenia. In these situations, immediate help from a professional is essential.
+      If you or someone you know is in crisis, please reach out to the nearest hospital or emergency service for assistance. You can also contact a trusted psychiatrist, counselor, or therapist for urgent support. Involving a family member or close friend can provide additional comfort and help during this time.
+      <br> <br>
+    Remember, seeking professional help promptly can make a significant difference, and you are not alone in this journey. Your safety and well-being are always the priority. 
+    <br> <br>
+    you can contact the Suicide Prevention Helpline at <strong>022 2754 6669 </strong> or AASRA at <strong> 91-9820466726</strong> for confidential support.
+    </div>
+    </div>
+    </div>
+    
+    <div class="container text-center py-3 small">© 2024 InnerWhispers. All rights reserved. &nbsp; Made by <a href="#" class="link-fancy" target="_blank">Gopi Kalyan.</a>
+    </div>
+    </footer>
+    
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/aos.js"></script>
+ <script>
+ AOS.init({
+   duration: 800, // values from 0 to 3000, with step 50ms
+ });
+ </script>
+
+ <script>
+  let scrollpos = window.scrollY
+  const header = document.querySelector(".navbar")
+  const header_height = header.offsetHeight
+
+  const add_class_on_scroll = () => header.classList.add("scrolled", "shadow-sm")
+  const remove_class_on_scroll = () => header.classList.remove("scrolled", "shadow-sm")
+
+  window.addEventListener('scroll', function() {
+    scrollpos = window.scrollY;
+
+    if (scrollpos >= header_height) { add_class_on_scroll() }
+    else { remove_class_on_scroll() }
+
+    console.log(scrollpos)
+  })
+</script>
+
+
+<script>
+  function openModal(name) {
+      document.getElementById(name + 'Modal').style.display = 'block';
+  }
+
+  function closeModal(name) {
+      document.getElementById(name + 'Modal').style.display = 'none';
+  }
+
+  // Close modal if clicked outside the modal content
+  window.onclick = function(event) {
+      if (event.target.className === 'modal') {
+          event.target.style.display = 'none';
+      }
+  }
+</script>
+
+
+
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+  (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+  </script>
+
+  </body>
+</html>
